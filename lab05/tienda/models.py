@@ -17,3 +17,18 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombre
+
+class Cliente(models.Model):
+    nombre = models.CharField(max_length=200)
+    apellido = models.CharField(max_length=300)
+    dni = models.IntegerField(name= "Dni")
+    telefono = models.IntegerField(name="Telefono")
+    direccion = models.TextField(max_length=100)
+    email = models.EmailField(name="Email")
+    fecha_nacimiento = models.DateTimeField(name="Fecha de Nacimiento")
+    fecha_publicacion = models.DateTimeField(name="Fecha de Publicacion")
+
+    def __str__(self):
+        return self.nombre
+
+
