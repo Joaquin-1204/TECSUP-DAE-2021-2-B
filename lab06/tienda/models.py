@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.base import Model
 
 # Create your models here.
 class Categoria(models.Model):
@@ -17,4 +18,17 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombre
+        
+class Cliente(models.Model):
+    nombre = models.CharField(max_length=200)
+    apellido = models.CharField(max_length=200)
+    dni = models.CharField(max_length=8)
+    telefono = models.CharField(max_length=9)
+    email = models.EmailField(max_length=100)
+    fecha_nacimiento = models.DateTimeField('fecha de nacimiento')
+    fecha_publicacion = models.DateTimeField('fecha de publicacion')
+
+    def __str__(self):
+        return self.nombre
+
 
